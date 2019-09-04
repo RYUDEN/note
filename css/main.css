@@ -168,7 +168,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'HY', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
@@ -1039,7 +1039,7 @@ pre .javascript .function {
 }
 .site-title {
   display: inline-block;
-  font-family: 'Lato', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'HY', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   line-height: 1.5;
@@ -1674,7 +1674,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fca1c1;
+  background: #118eb5;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2552,9 +2552,9 @@ ul.breadcrumb li + li:last-child {
 }
 @font-face {
   font-family: HY;
-  src: url("./HY.ttf");
+  src: url("HY.ttf");
   font-family: HYF;
-  src: url("./HYQuanTangShiF.ttf");
+  src: url("HYQuanTangShiF.ttf");
   font-family: HYJ;
-  src: url("./HYQuanTangShiJ.ttf");
+  src: url("HYQuanTangShiJ.ttf");
 }

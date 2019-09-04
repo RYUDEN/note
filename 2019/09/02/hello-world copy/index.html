@@ -291,6 +291,77 @@
         
       </footer>
     
+    <style>
+    .postCommit{
+      padding:30px 0;
+      display:none;
+    }
+    .postCommit .postArea{
+      width:100%;
+      resize: none;
+      height: 45px;
+      margin-bottom: 16px;
+      padding: 16px;
+      font-size: 13px;
+      color: #383838;
+      background: #f5f5f5;
+      border: 1px solid #a7a7a7;
+      border-radius: 2px;
+      box-sizing:border-box;
+      height: 80px;
+    }
+    .postCommit .postArea:focus{
+      outline: none;
+      border-color: #e6c226;
+    }
+    button{
+      height: 24px;
+      padding: 0 30px;
+      outline: none;
+      text-decoration: none;
+      color: #f5f5f5;
+      font-size: 12px;
+      background: #777;
+      border: 1px solid #777;
+      border-radius: 2px;
+      -webkit-transition: all .2s ease;
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    button:hover{
+      opacity:.9;
+    }
+    button:active{
+      opacity:.7;
+    }
+    </style>
+    <div class="postCommit"
+    id="commit"
+    >
+      <textarea
+      class="postArea"
+      ></textarea>
+      <button
+      onclick="submit()"
+      >评论</button>  
+    </div>
+
+    <script>
+      let path = window.location.pathname;
+
+      if(path !=='/note/'){
+        document.querySelector('.postCommit').style.display = 'block';
+      };
+      var submit = function(){
+        var tag = document.querySelector('.postArea');
+        var value = tag.value;
+        if(value){
+
+        }else{
+          alert('请认真填写评论。')
+        }
+      }
+    </script>
   </div>
   
   
