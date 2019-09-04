@@ -271,8 +271,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/note/2019/09/03/20190903/" rel="next" title="20190903 标签插件使用">
-                  <i class="fa fa-chevron-left"></i> 20190903 标签插件使用
+                <a href="/note/2019/09/03/20190903/" rel="next" title="20190903">
+                  <i class="fa fa-chevron-left"></i> 20190903
                 </a>
               
             </div>
@@ -280,6 +280,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/note/2019/09/04/HEXO的块使用/" rel="prev" title="20190903">
+                  20190903 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -342,6 +346,24 @@
     </div>
 
     <script>
+    function FETCH_POST(url,data) {
+      return fetch(url, {
+        body:data,
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded', 
+            'Accept': 'application/json, text/plain, */*'
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+      })
+      // .then(response => response.json()) // parses response to JSON
+      .then(response => response.json()) // parses response to JSON
+    }
+    
       let path = window.location.pathname;
 
       if(path !=='/note/'){
@@ -417,7 +439,7 @@
         
           <a href="/note/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
