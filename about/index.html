@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="いただきます!">
 <meta property="og:description" content=".postCommit{           display:none;         }         .postCommit .postArea{           width:100%;           resize: none;           height: 45px;           margin-bottom: 16px;">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-09-06T08:45:49.395Z">
+<meta property="og:updated_time" content="2019-09-07T03:17:10.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="いただきます!">
 <meta name="twitter:description" content=".postCommit{           display:none;         }         .postCommit .postArea{           width:100%;           resize: none;           height: 45px;           margin-bottom: 16px;">
@@ -307,7 +307,6 @@
           <textarea class="postArea" placeholder="可以输入HTML哦~"></textarea>
           <button onclick="Submit()">投稿</button>  
         </div>
-    
         <script>
           (function(){
             var path = window.location.pathname;
@@ -319,8 +318,13 @@
               var tag = document.querySelector('.postArea');
               var value = tag.value;
               if(value){
-                var url = 'http://lithii.top:2333/commit?title='+title+'&content='+value
-                FETCH_GET(url).then(res=>{
+                var url = 'http://lithii.top:2333/aboutme'
+                var data = {
+                  title:title,
+                  content:value
+                }
+                console.log(data)
+                FETCH_POST(url,JSON.stringify(data)).then(res=>{
                   if(res.status ===200){
                     tag.value = '';
                     get_commit()
@@ -563,6 +567,23 @@
             'Accept': 'application/json, text/plain, */*'
         },
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+      })
+      // .then(response => response.json()) // parses response to JSON
+      .then(response => response.json()) // parses response to JSON
+    }
+    function FETCH_POST(url,data) {
+      return fetch(url, {
+        body:data,
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8', 
+            'Accept': 'application/json, text/plain, */*'
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, cors, *same-origin
         redirect: 'follow', // manual, *follow, error
         referrer: 'no-referrer', // *client, no-referrer

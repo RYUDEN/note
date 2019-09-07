@@ -634,5 +634,22 @@
       // .then(response => response.json()) // parses response to JSON
       .then(response => response.json()) // parses response to JSON
     }
+    function FETCH_POST(url,data) {
+      return fetch(url, {
+        body:data,
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8', 
+            'Accept': 'application/json, text/plain, */*'
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+      })
+      // .then(response => response.json()) // parses response to JSON
+      .then(response => response.json()) // parses response to JSON
+    }
       </script>
 </html>
