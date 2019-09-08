@@ -372,24 +372,30 @@
         if(path !=='/note/'){
           document.querySelector('.postCommit').style.display = 'block';
         };
-        var Submit = function(){
-          var title = decodeURI(path).split('/')[5];
-          var tag = document.querySelector('.postArea');
-          var value = tag.value;
-          if(value){
-            var url = 'http://lithii.top:2333/commit?title='+title+'&content='+value
-            FETCH_GET(url).then(res=>{
-              if(res.status ===200){
-                tag.value = '';
-                get_commit()
+
+            var Submit = function(){
+              var title = decodeURI(path).split('/')[5];
+              var tag = document.querySelector('.postArea');
+              var value = tag.value;
+              if(value){
+                var url = 'http://lithii.top:2333/aboutme'
+                var data = {
+                  title:title,
+                  content:value
+                }
+                console.log(data)
+                FETCH_POST(url,JSON.stringify(data)).then(res=>{
+                  if(res.status ===200){
+                    tag.value = '';
+                    get_commit()
+                  }else{
+                    alert('评论失败')
+                  }
+                })
               }else{
-                alert('评论失败')
+                alert('什么都没写的。')
               }
-            })
-          }else{
-            alert('请认真填写评论。')
-          }
-        }
+            }
         var commit = document.querySelector('#commit');
         var ul = document.createElement('ul');
         ul.classList.add('commit-box');
