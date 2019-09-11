@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="网易云部分音乐下载之后是NCM格式，无法直接使用，可以使用工具进行转换。">
-<meta name="keywords" content="PYTHON,MUSIC">
+  <meta name="description" content="肝铺子肝出了自助餐厅 / 今日无行情">
+<meta name="keywords" content="LIFE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网易云音乐NCM格式解密">
-<meta property="og:url" content="http://x.lithii.top/2019/09/06/网易云音乐解密/index.html">
+<meta property="og:title" content="20190910">
+<meta property="og:url" content="http://x.lithii.top/2019/09/11/20190910/index.html">
 <meta property="og:site_name" content="いただきます!">
-<meta property="og:description" content="网易云部分音乐下载之后是NCM格式，无法直接使用，可以使用工具进行转换。">
+<meta property="og:description" content="肝铺子肝出了自助餐厅 / 今日无行情">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-09-06T08:06:31.235Z">
+<meta property="og:updated_time" content="2019-09-11T01:56:11.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网易云音乐NCM格式解密">
-<meta name="twitter:description" content="网易云部分音乐下载之后是NCM格式，无法直接使用，可以使用工具进行转换。">
-  <link rel="canonical" href="http://x.lithii.top/2019/09/06/网易云音乐解密/">
+<meta name="twitter:title" content="20190910">
+<meta name="twitter:description" content="肝铺子肝出了自助餐厅 / 今日无行情">
+  <link rel="canonical" href="http://x.lithii.top/2019/09/11/20190910/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>网易云音乐NCM格式解密 | いただきます!</title>
+  <title>20190910 | いただきます!</title>
   
 
 
@@ -207,7 +207,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://x.lithii.top/note/2019/09/06/网易云音乐解密/">
+    <link itemprop="mainEntityOfPage" href="http://x.lithii.top/note/2019/09/11/20190910/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="0231019">
@@ -219,7 +219,7 @@
       <meta itemprop="name" content="いただきます!">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">网易云音乐NCM格式解密
+        <h1 class="post-title" itemprop="name headline">20190910
 
           
         </h1>
@@ -235,7 +235,7 @@
                 
               
 
-              <time title="作成日：2019-09-06 15:27:51 / 修正日：16:06:31" itemprop="dateCreated datePublished" datetime="2019-09-06T15:27:51+08:00">2019-09-06</time>
+              <time title="作成日：2019-09-11 09:54:20 / 修正日：09:56:11" itemprop="dateCreated datePublished" datetime="2019-09-11T09:54:20+08:00">2019-09-11</time>
             </span>
           
             
@@ -244,7 +244,7 @@
           
 
           
-            <div class="post-description">网易云部分音乐下载之后是NCM格式，无法直接使用，可以使用工具进行转换。</div>
+            <div class="post-description">肝铺子肝出了自助餐厅 / 今日无行情</div>
           
 
         </div>
@@ -256,23 +256,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="使用PYTHON2进行NCM格式转MP3"><a href="#使用PYTHON2进行NCM格式转MP3" class="headerlink" title="使用PYTHON2进行NCM格式转MP3"></a>使用PYTHON2进行NCM格式转MP3</h1><h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://github.com/RYUDEN/ncmdump" target="_blank" rel="noopener">ncmdump</a>开源项目  </p>
-<h2 id="1-安装python2-7"><a href="#1-安装python2-7" class="headerlink" title="1.安装python2.7"></a>1.安装python2.7</h2><h2 id="2-安装依赖工具"><a href="#2-安装依赖工具" class="headerlink" title="2.安装依赖工具"></a>2.安装依赖工具</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pycryptodome mutagen</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-使用方法"><a href="#3-使用方法" class="headerlink" title="3.使用方法"></a>3.使用方法</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python app.py [-f flac]  [-o  ./output] [-d] [./input] </span><br><span class="line">    -f 参数 -o 输出目录 -d 删除源文件  输入文件目录</span><br></pre></td></tr></table></figure>
-
-<p>一共四个参数   </p>
-<p>-f 转换之后批量重命名  </p>
-<p>-o 转换之后的文件存放目录 必带，默认原始目录  </p>
-<p>-d 可选 是否删除源文件  </p>
-<p>path 路径，存放ncm格式文件的路径，可以为文件夹或者文件。  </p>
-<p><strong>进程如果中断，则注意文件名是否存在有特殊字符，重命名即可</strong>  </p>
-<p>example  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python app.py  -o ./ncm ./ncm  # 表示 从ncm文件夹里面读取ncm文件 转换之后存放到ncm文件夹  </span><br><span class="line">python app.py  -o ./ncm -d ./ncm  # 表示 从ncm文件夹里面读取ncm文件 转换之后存放到ncm文件夹 并且删除 ncm文件</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-傻瓜方法"><a href="#4-傻瓜方法" class="headerlink" title="4.傻瓜方法"></a>4.傻瓜方法</h2><p>反正可以一键转换了。<br>点击Start.bat文件 可以保留源文件 转换生成mp3格式音乐<br>点击StartAndDelSource.bat文件 不保留源文件 转换生成mp3格式音乐  </p>
-<p><a href="https://raw.githubusercontent.com/RYUDEN/ncmdump/master/tools.zip" target="_blank" rel="noopener">工具下载地址</a></p>
-
+        <h2 id="肝铺子肝出了自助餐厅-HAPPY"><a href="#肝铺子肝出了自助餐厅-HAPPY" class="headerlink" title="肝铺子肝出了自助餐厅  HAPPY"></a>肝铺子肝出了自助餐厅  HAPPY</h2><h2 id="跑步6公里-HAPPY"><a href="#跑步6公里-HAPPY" class="headerlink" title="跑步6公里  HAPPY"></a>跑步6公里  HAPPY</h2><h2 id="上午开会听废话-下午加班"><a href="#上午开会听废话-下午加班" class="headerlink" title="上午开会听废话 下午加班"></a>上午开会听废话 下午加班</h2><h2 id="今日-无行情"><a href="#今日-无行情" class="headerlink" title="今日 无行情"></a>今日 无行情</h2>
     </div>
 
     
@@ -287,9 +271,7 @@
           
           <div class="post-tags">
             
-              <a href="/note/tags/PYTHON/" rel="tag"># PYTHON</a>
-            
-              <a href="/note/tags/MUSIC/" rel="tag"># MUSIC</a>
+              <a href="/note/tags/LIFE/" rel="tag"># LIFE</a>
             
           </div>
         
@@ -299,8 +281,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/note/2019/09/06/20190906/" rel="next" title="20190906">
-                  <i class="fa fa-chevron-left"></i> 20190906
+                <a href="/note/2019/09/09/12306分流抢票/" rel="next" title="12306抢票">
+                  <i class="fa fa-chevron-left"></i> 12306抢票
                 </a>
               
             </div>
@@ -308,10 +290,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/note/2019/09/06/恋をしたくない/" rel="prev" title="恋をしたい">
-                  恋をしたい <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -508,7 +486,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用PYTHON2进行NCM格式转MP3"><span class="nav-number">1.</span> <span class="nav-text">使用PYTHON2进行NCM格式转MP3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目地址"><span class="nav-number">1.1.</span> <span class="nav-text">项目地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装python2-7"><span class="nav-number">1.2.</span> <span class="nav-text">1.安装python2.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装依赖工具"><span class="nav-number">1.3.</span> <span class="nav-text">2.安装依赖工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用方法"><span class="nav-number">1.4.</span> <span class="nav-text">3.使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-傻瓜方法"><span class="nav-number">1.5.</span> <span class="nav-text">4.傻瓜方法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#肝铺子肝出了自助餐厅-HAPPY"><span class="nav-number">1.</span> <span class="nav-text">肝铺子肝出了自助餐厅  HAPPY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跑步6公里-HAPPY"><span class="nav-number">2.</span> <span class="nav-text">跑步6公里  HAPPY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上午开会听废话-下午加班"><span class="nav-number">3.</span> <span class="nav-text">上午开会听废话 下午加班</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#今日-无行情"><span class="nav-number">4.</span> <span class="nav-text">今日 无行情</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
