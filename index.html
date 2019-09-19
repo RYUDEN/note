@@ -204,6 +204,235 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://x.lithii.top/note/2019/09/19/20190919/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="0231019">
+      <meta itemprop="description" content="不看天，山雨欲來渾然不覺，要被洪水淹死；不看地，夜半懸崖大步流星，要被群山淹沒。">
+      <meta itemprop="image" content="/note/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="いただきます!">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/note/2019/09/19/20190919/" class="post-title-link" itemprop="url">20190919</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              
+                
+              
+
+              <time title="作成日：2019-09-19 17:03:51 / 修正日：17:14:13" itemprop="dateCreated datePublished" datetime="2019-09-19T17:03:51+08:00">2019-09-19</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          今日無行情 / 老哥牛🍺，用腾讯游戏加速器当梯子
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/note/2019/09/19/20190919/">
+                続きを読む &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+    <style>
+    .postCommit{
+      padding:30px 0;
+      display:none;
+    }
+    .postCommit .postArea{
+      width:100%;
+      resize: none;
+      height: 45px;
+      margin-bottom: 16px;
+      padding: 16px;
+      font-size: 13px;
+      color: #383838;
+      background: #f5f5f5;
+      border: 1px solid #a7a7a7;
+      border-radius: 2px;
+      box-sizing:border-box;
+      height: 80px;
+    }
+    .postCommit .postArea:focus{
+      outline: none;
+      border-color: #e6c226;
+    }
+    button{
+      height: 24px;
+      padding: 0 30px;
+      outline: none;
+      text-decoration: none;
+      color: #f5f5f5;
+      font-size: 12px;
+      background: #777;
+      border: 1px solid #777;
+      border-radius: 2px;
+      -webkit-transition: all .2s ease;
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    button:hover{
+      opacity:.9;
+    }
+    button:active{
+      opacity:.7;
+    }
+    ul.commit-box{
+      padding-left:0;
+    }
+    li {
+      list-style:none;
+    }
+    div.info{
+      color :#000;
+      font-size:18px;
+      text-indent:1em;
+    }
+    div.time{
+      color:#a1a1a1;
+      font-size:12px;
+    }
+    </style>
+    <div class="postCommit"
+    id="commit"
+    >
+      <textarea
+      class="postArea"
+      ></textarea>
+      <button
+      onclick="Submit()"
+      >投稿</button>  
+    </div>
+
+    <script>
+      (function(){
+        var path = window.location.pathname;
+        if(path !=='/note/'){
+          document.querySelector('.postCommit').style.display = 'block';
+        };
+
+            var Submit = function(){
+              var title = decodeURI(path).split('/')[5];
+              var tag = document.querySelector('.postArea');
+              var value = tag.value;
+              if(value){
+                var url = 'http://lithii.top:2333/aboutme'
+                var data = {
+                  title:title,
+                  content:value
+                }
+                console.log(data)
+                FETCH_POST(url,JSON.stringify(data)).then(res=>{
+                  if(res.status ===200){
+                    tag.value = '';
+                    get_commit()
+                  }else{
+                    alert('评论失败')
+                  }
+                })
+              }else{
+                alert('什么都没写的。')
+              }
+            }
+        var commit = document.querySelector('#commit');
+        var ul = document.createElement('ul');
+        ul.classList.add('commit-box');
+        commit.appendChild(ul);
+        var template = function(obj){
+          var li      = document.createElement('li');
+          var builder = function(className,tag){
+            var node = document.createElement('div');
+                node.classList.add(className);
+                node.innerText = obj[tag];
+                if(tag==='CreateTime'){
+                  var time = new Date(obj[tag]*1000)
+                  node.innerText = time.toLocaleDateString()+' '+time.toLocaleTimeString();
+                }
+            return node
+          }
+          li.appendChild(builder('time','CreateTime'))
+          li.appendChild(builder('info','content'))
+          return li 
+        }
+        /**
+          渲染评论列表
+        */
+        var renderCommit = function(arr){
+          ul.innerHTML = '';
+          for(let i = 0 ;i<arr.length;i++){
+                ul.appendChild(template(arr[i]));
+          }
+        };
+        /**
+          获取评论
+        */
+        var get_commit = function(){
+          // http://lithii.top:2333/find?token=8c3691f77fa8f81087f145a4cba4a8a8&form=Commit&title=16215
+          var title = decodeURI(path).split('/')[5];
+          var url = 'http://lithii.top:2333/find?token=8c3691f77fa8f81087f145a4cba4a8a8&form=Commit&title='+title
+          FETCH_GET(url).then(res=>{
+            if(res.status ===200){
+              renderCommit(res.data.reverse())
+            }else{
+              alert('评论失败')
+            }
+          })   
+        }
+        window.onload = get_commit;
+        window.Submit = Submit
+      })()
+    </script>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://x.lithii.top/note/2019/09/17/20190917/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2260,235 +2489,6 @@
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://x.lithii.top/note/2019/09/06/20190906/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="0231019">
-      <meta itemprop="description" content="不看天，山雨欲來渾然不覺，要被洪水淹死；不看地，夜半懸崖大步流星，要被群山淹沒。">
-      <meta itemprop="image" content="/note/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="いただきます!">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/note/2019/09/06/20190906/" class="post-title-link" itemprop="url">20190906</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              
-                
-              
-
-              <time title="作成日：2019-09-06 15:22:18 / 修正日：16:00:58" itemprop="dateCreated datePublished" datetime="2019-09-06T15:22:18+08:00">2019-09-06</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          今日無行情 / 明天又是周末真开心
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/note/2019/09/06/20190906/">
-                続きを読む &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-    <style>
-    .postCommit{
-      padding:30px 0;
-      display:none;
-    }
-    .postCommit .postArea{
-      width:100%;
-      resize: none;
-      height: 45px;
-      margin-bottom: 16px;
-      padding: 16px;
-      font-size: 13px;
-      color: #383838;
-      background: #f5f5f5;
-      border: 1px solid #a7a7a7;
-      border-radius: 2px;
-      box-sizing:border-box;
-      height: 80px;
-    }
-    .postCommit .postArea:focus{
-      outline: none;
-      border-color: #e6c226;
-    }
-    button{
-      height: 24px;
-      padding: 0 30px;
-      outline: none;
-      text-decoration: none;
-      color: #f5f5f5;
-      font-size: 12px;
-      background: #777;
-      border: 1px solid #777;
-      border-radius: 2px;
-      -webkit-transition: all .2s ease;
-      transition: all .2s ease;
-      cursor: pointer;
-    }
-    button:hover{
-      opacity:.9;
-    }
-    button:active{
-      opacity:.7;
-    }
-    ul.commit-box{
-      padding-left:0;
-    }
-    li {
-      list-style:none;
-    }
-    div.info{
-      color :#000;
-      font-size:18px;
-      text-indent:1em;
-    }
-    div.time{
-      color:#a1a1a1;
-      font-size:12px;
-    }
-    </style>
-    <div class="postCommit"
-    id="commit"
-    >
-      <textarea
-      class="postArea"
-      ></textarea>
-      <button
-      onclick="Submit()"
-      >投稿</button>  
-    </div>
-
-    <script>
-      (function(){
-        var path = window.location.pathname;
-        if(path !=='/note/'){
-          document.querySelector('.postCommit').style.display = 'block';
-        };
-
-            var Submit = function(){
-              var title = decodeURI(path).split('/')[5];
-              var tag = document.querySelector('.postArea');
-              var value = tag.value;
-              if(value){
-                var url = 'http://lithii.top:2333/aboutme'
-                var data = {
-                  title:title,
-                  content:value
-                }
-                console.log(data)
-                FETCH_POST(url,JSON.stringify(data)).then(res=>{
-                  if(res.status ===200){
-                    tag.value = '';
-                    get_commit()
-                  }else{
-                    alert('评论失败')
-                  }
-                })
-              }else{
-                alert('什么都没写的。')
-              }
-            }
-        var commit = document.querySelector('#commit');
-        var ul = document.createElement('ul');
-        ul.classList.add('commit-box');
-        commit.appendChild(ul);
-        var template = function(obj){
-          var li      = document.createElement('li');
-          var builder = function(className,tag){
-            var node = document.createElement('div');
-                node.classList.add(className);
-                node.innerText = obj[tag];
-                if(tag==='CreateTime'){
-                  var time = new Date(obj[tag]*1000)
-                  node.innerText = time.toLocaleDateString()+' '+time.toLocaleTimeString();
-                }
-            return node
-          }
-          li.appendChild(builder('time','CreateTime'))
-          li.appendChild(builder('info','content'))
-          return li 
-        }
-        /**
-          渲染评论列表
-        */
-        var renderCommit = function(arr){
-          ul.innerHTML = '';
-          for(let i = 0 ;i<arr.length;i++){
-                ul.appendChild(template(arr[i]));
-          }
-        };
-        /**
-          获取评论
-        */
-        var get_commit = function(){
-          // http://lithii.top:2333/find?token=8c3691f77fa8f81087f145a4cba4a8a8&form=Commit&title=16215
-          var title = decodeURI(path).split('/')[5];
-          var url = 'http://lithii.top:2333/find?token=8c3691f77fa8f81087f145a4cba4a8a8&form=Commit&title='+title
-          FETCH_GET(url).then(res=>{
-            if(res.status ===200){
-              renderCommit(res.data.reverse())
-            }else{
-              alert('评论失败')
-            }
-          })   
-        }
-        window.onload = get_commit;
-        window.Submit = Submit
-      })()
-    </script>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
@@ -2541,7 +2541,7 @@
         
           <a href="/note/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>
